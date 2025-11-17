@@ -6,6 +6,11 @@ let myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {
   keyboard: false,
 });
 
+let options = {
+    valueNames: ['name', 'price']
+}
+let userList
+
 document
   .querySelector("button.add-new")
   .addEventListener("click", function (e) {
@@ -86,10 +91,27 @@ function update_goods() {
         );
       }
     }
-    // userList = new List('goods', options);
+    userList = new List('goods', options);
   } else {
     table1.hidden = true;
     table2.hidden = true;
   }
   document.querySelector(".price-result").innerHTML = result_price + "&#8381;";
 }
+
+document.querySelector('.list').addEventListener('click', function(e) {
+    if(!e.target.dataset.delete) {
+        return 
+    }
+    Swal.fire({
+        title:'Внимание!',
+        text: 'Вы действительно хотите удалить товар?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Да',
+        cancelButtonText: 'Отмена',
+
+    })
+})

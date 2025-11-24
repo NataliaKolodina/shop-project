@@ -1,13 +1,13 @@
 table1.onclick = function(e) {
   if(e.target.tagName != 'TH') return
   let th = e.target
-  sortTable(th.colIndex, th.dataset.type, 'table1')
+  sortTable(th.cellIndex, th.dataset.type, 'table1')
 }
 
 table2.onclick = function(e) {
   if(e.target.tagName != "TH") return
   let th = e.target
-  sortTable(th.colIndex, th.dataset.type, 'table12')
+  sortTable(th.cellIndex, th.dataset.type, 'table12')
 }
 
 function sortTable(colNum, type, id) {

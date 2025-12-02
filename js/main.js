@@ -64,8 +64,8 @@ document
     } else {
       Swal.fire({
         icon: "error",
-        title: "Ошибка",
-        text: "Пожалуйста, заполните все поля.",
+        title: "Error",
+        text: "Please fill in all fields.",
       });
     }
   });
@@ -131,7 +131,7 @@ function update_goods() {
     table1.hidden = true;
     table2.hidden = true;
   }
-  document.querySelector(".price-result").innerHTML = result_price + "&#8381;";
+  document.querySelector(".price-result").innerHTML = result_price + "&#8364;";
 }
 
 document.querySelector(".list").addEventListener("click", function (e) {
@@ -139,14 +139,14 @@ document.querySelector(".list").addEventListener("click", function (e) {
     return;
   }
   Swal.fire({
-    title: "Внимание!",
-    text: "Вы действительно хотите удалить товар?",
+    title: "Attention!",
+    text: "Do you really want to delete the item?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
     confirmButtonText: "Да",
-    cancelButtonText: "Отмена",
+    cancelButtonText: "Cancel",
   }).then((result) => {
     if (result.isConfirmed) {
       let goods = JSON.parse(localStorage.getItem("goods"));
@@ -157,7 +157,11 @@ document.querySelector(".list").addEventListener("click", function (e) {
           update_goods();
         }
       }
-      Swal.fire("Удалено!", "Выбранный товар был успешно удален", "success");
+      Swal.fire(
+        "Deleted!",
+        "The selected item has been successfully deleted.",
+        "success"
+      );
     }
   });
 });

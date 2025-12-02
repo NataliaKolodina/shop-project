@@ -145,7 +145,7 @@ document.querySelector(".list").addEventListener("click", function (e) {
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Да",
+    confirmButtonText: "Yes",
     cancelButtonText: "Cancel",
   }).then((result) => {
     if (result.isConfirmed) {
